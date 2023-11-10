@@ -47,42 +47,78 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
+
 
 
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: v.sreeja
+RegisterNumber:  212222230169
 */
-
-
-
-
+MULTIPLEXER
+module nmux(a,s,y);
+input[3:0]a;
+input[1:0]s;
+output reg y;
+always @ (a,s)
+begin
+case(s)
+2'b00:y=a[0];
+2'b01:y=a[1];
+2'b10:y=a[2];
+2'b11:y=a[3];
+endcase
+end
+endmodule
+module dmux(input in, input [1:0] sel, output reg [3:0] out);
+always @(in or sel) begin
+case(sel)
+2'b00: out = 4'b0001;
+2'b01: out = 4'b0010;
+2'b10: out = 4'b0100;
+2'b11: out = 4'b1000;
+default: out = 4'b0000; // Default case
+endcase
+end
+endmodule
 
 
 ### RTL LOGIC  
+Multiplexer:
 
+![Screenshot (433)](https://github.com/VelasiriSreeja/Exercise-07-Multiplexer-and-De-multiplexer/assets/118344328/ab0dc5ab-c252-42c2-8147-245a97ba5fd6)
 
+Demultiplexer:
 
-
+![Screenshot (434)](https://github.com/VelasiriSreeja/Exercise-07-Multiplexer-and-De-multiplexer/assets/118344328/2fca60ac-5a82-4b68-a107-0c5c49c8da05)
 
 
 
 
 ### TIMING DIGRAMS  
 
+multiplexer:
 
+![Screenshot (435)](https://github.com/VelasiriSreeja/Exercise-07-Multiplexer-and-De-multiplexer/assets/118344328/a1dd67cd-182a-48b2-b1c0-919e136a41ee)
 
+demultiplexer:
 
+ ![Screenshot (436)](https://github.com/VelasiriSreeja/Exercise-07-Multiplexer-and-De-multiplexer/assets/118344328/c9c0695a-c3d7-4303-b82d-0239dd001da0)
 
 ### TRUTH TABLE 
 
+multiplexer:
 
+![Screenshot (437)](https://github.com/VelasiriSreeja/Exercise-07-Multiplexer-and-De-multiplexer/assets/118344328/0ead4b3b-38db-43bd-8e75-7467d4c0d0c7)
 
+demultiplexer:
+
+![Screenshot (438)](https://github.com/VelasiriSreeja/Exercise-07-Multiplexer-and-De-multiplexer/assets/118344328/4c44c780-2d4a-4413-bd3a-faf6192286ad)
 
 
 
 ### RESULTS 
+
+Therefore multiplexer and demultiplexer is executed successfully.
