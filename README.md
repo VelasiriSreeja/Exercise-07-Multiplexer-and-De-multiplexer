@@ -57,6 +57,7 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: v.sreeja
 RegisterNumber:  212222230169
 */
+```
 MULTIPLEXER
 module nmux(a,s,y);
 input[3:0]a;
@@ -84,7 +85,7 @@ endcase
 end
 endmodule
 
-
+```
 ### RTL LOGIC  
 Multiplexer:
 
